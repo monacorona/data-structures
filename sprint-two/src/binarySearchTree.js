@@ -60,8 +60,16 @@ var binarySearchMethods = {
 
   depthFirstLog: function(callback) {
 
+    if (this.value) {
+      callback(this.value);
+    } 
+    if (this.left) {
+      this.left.depthFirstLog(callback);
+    }
+    if (this.right) {
+      this.right.depthFirstLog(callback);
+    }
   }
-
 
 };
 /*
