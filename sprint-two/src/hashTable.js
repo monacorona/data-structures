@@ -13,6 +13,8 @@ HashTable.prototype.insert = function(k, v) {
     this._storage[index] = [[k, v]];
     //else check if same key was passed in 
   } else {
+    //check if key overwrite occurred
+    //if not then push new key and value array
     var override = false;
     for (var i = 0; i < this._storage[index].length; i++) {
       //if so then overwrite value
@@ -25,8 +27,7 @@ HashTable.prototype.insert = function(k, v) {
       }
     }
   }
-  //check if key overwrite occurred
-    //if not then push new key and value array
+  
 };
 
 HashTable.prototype.retrieve = function(k) {
@@ -35,10 +36,6 @@ HashTable.prototype.retrieve = function(k) {
     if (this._storage[index][i][0] === k) {
       return this._storage[index][i][1];
     }
-    // for (var j = 0; j < this._storage[index][j].length; j++) {
-    //   if (this._storage[index][i][] === k) {
-    //     console.log(this._storage[i][j]);
-    //     return this._storage[index][i][1];
   } 
 };
 

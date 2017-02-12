@@ -7,7 +7,7 @@ var LinkedList = function() {
     //new node creates a node connected to previous node
     //new node becomes tail node
     var node = Node(value);
-    if(list.head === null){
+    if (list.head === null) {
       list.head = node;
     } else {
       list.tail.next = node;
